@@ -7,7 +7,7 @@ app = FastAPI()
 client = TestClient(app)
 
 def test_create_weather_entry():
-    response = client.post("/weather/", json={"city": "New York", "day": "2022-01-01"})
+    response = client.post("/weather/", json={"city": "london", "day": "2022-01-01"})
     assert response.status_code == 201
 
 def test_read_weather():
