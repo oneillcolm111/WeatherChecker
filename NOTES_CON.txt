@@ -1,0 +1,51 @@
+# tech used
+
+python
+FastApi - for endpoint creation (POST/GET)
+DB - SQLite3
+Unit tests - pytest
+Docker - building containers
+heroku - used for deploying app
+
+# Progress
+
+Setup time - 3 hours 
+
+Status
+
+Endpoints Created - check
+Db created - 2 tables - check
+unit tests written - check
+docker setup - contianers running - check
+heroku - app deployed - check
+
+Test passing - No - 404 error response when 201 expected - Diagnosis - endpoint not configured properly, ran out of time to properly diagnose
+
+Other issues - due t hardware and time i was struggling to populate the db with the openweathermap info
+
+# running tests
+
+use  pytest -v tests/test_main.py in terminal
+
+locally in 
+# Tools/research Used
+
+youtube/ChatAI/stackoverflow/general google searches
+
+# Notes
+
+With more time and I would have fixed the endpoint issues with the 404 error. All ingredients are in the project I just ran over time and 
+was unable to finish completely
+As a tester my next steps would be
+- Test Coverage - as we add more endpoints we would need to ensure that all endpoints are covered and that endpoints themselves are functionally tested
+- Error Handling - adding error handling to catch errors from the API either expected errors or unintentional
+- remove the hardcoded data - use parameters or stubs to enter variable relevant dynamic data
+- Test setup and teardown - Maybe add this to ensure each test starts from same clean slate
+- Add more assertions to the tests or outputs to the tests to increase the Coverage
+- Add negative scenarios to the testing
+- Add smoke / regression suites and functional hapy path suites
+
+
+
+
+
