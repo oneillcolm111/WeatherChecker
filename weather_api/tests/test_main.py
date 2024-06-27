@@ -1,16 +1,16 @@
+from fastapi import FastAPI
 import pytest
 from main import app
+from fastapi.testclient import TestClient
 
-@pytest.fixture
-def client():
-    with app.test_client() as client:
-        yield client
+app = FastAPI()
+client = TestClient(app)
 
-def test_create_weather_entry(client):
+def test_create_weather_entry():
     response = client.post("/weather/", json={"city": "New York", "day": "2022-01-01"})
     assert response.status_code == 201
 
-def test_read_weather(client):
+def test_read_weather():
     response = client.get("/weather/2022-01-01")
     assert response.status_code == 200
     assert len(response.json()["data"]) > 0
