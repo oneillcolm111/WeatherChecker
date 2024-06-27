@@ -15,5 +15,15 @@ c.execute("""
     );
 """)
 
+c.execute("""
+    CREATE TABLE IF NOT EXISTS forecast (
+        id INTEGER PRIMARY KEY,
+        weather_id INTEGER,
+        forecast_date DATE,
+        forecast_temp REAL,
+        FOREIGN KEY (weather_id) REFERENCES weather(id)
+    );
+""")
+
 conn.commit()
 conn.close()

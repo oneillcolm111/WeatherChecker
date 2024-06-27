@@ -11,7 +11,7 @@ app = FastAPI()
 async def store_weather(city: str, day: str) -> JSONResponse:
     try:
         # Fetch weather data from OpenWeatherMap API
-        response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=38b75ff97a0a3045b462ffd7a77f9794")
+        response = requests.get(F"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=38b75ff97a0a3045b462ffd7a77f9794")
         weather_data = response.json()
         
         # Store the data in the database
